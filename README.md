@@ -7,11 +7,6 @@ Projeto desenvolvido com o FastAPI do Python
 
 Rodando em ```http://localhost:8000```
 
-![image](https://user-images.githubusercontent.com/8227278/166521260-babf1587-eb7c-4816-9cc2-30cc3549c35a.png)
-
-Postam para os testes da API
-
-
 ## Configurações
 
 Se preferir utilizar um banco de dados externo, como exemplo do MongoDB, basta definir o arquivo ```backend/src/.env``` e setar a variável `MONGO_DETAILS` contendo a string de definição do MongoDB, como exemplo: ```MONGO_DETAILS=mongodb+srv://userdb:senhadb@cluster.fwqwh.mongodb.net/recommendations?retryWrites=true&w=majority```
@@ -30,6 +25,8 @@ O front funciona no ```http://localhost:3000```
 ## API Doc
 
 ``` http://localhost:8000/docs ```
+
+![image](https://user-images.githubusercontent.com/8227278/166521260-babf1587-eb7c-4816-9cc2-30cc3549c35a.png)
 
 ## APIs requisições
 
