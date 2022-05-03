@@ -16,7 +16,7 @@ Porém ao rodar a aplicação via Docker, ela já vem pronta para ser usada com 
 
 ## Rodando a aplicação
 
-Bastar correr o comando na raíz do projeto ```docker-compose up --buil```
+Bastar correr o comando na raíz do projeto ```docker-compose up -d --build```
 
 O back funciona no ```http://localhost:8000/recommendation```
 
@@ -31,7 +31,7 @@ O front funciona no ```http://localhost:3000```
 ## APIs requisições
 
 ### ```GET::http://localhost:8000/recommendation```
-Response:
+Ex. Response:
 ```
 {
 	"data": [
@@ -57,7 +57,7 @@ Response:
 }
 ```
 ### ```GET::http://localhost:8000/recommendation/{id}```
-Response: 
+Ex. Response: 
 ```
 {
 	"data": [
@@ -74,14 +74,14 @@ Response:
 }
 ```
 ### ```POST::http://localhost:8000/recommendation```
-Request:
+Ex. Request:
 ```
 {
   "name": "Carlos",
   "knows": ["627168b10dd98dbb3a5050c0"] //Id do friend
 }
 ```
-Response:
+Ex. Response:
 ```
 {
 	"data": [
@@ -98,7 +98,7 @@ Response:
 }
 ```
 ### ```PUT::http://localhost:8000/recommendation/{id}```
-Request:
+Ex. Request:
 ```
 {
   "knows": [
@@ -106,7 +106,7 @@ Request:
   ]
 }
 ```
-Response:
+Ex. Response:
 ```
 {
 	"data": [
@@ -117,7 +117,7 @@ Response:
 }
 ```
 ### ```DELETE::http://localhost:8000/recommendation/{id}```
-Response:
+Ex. Response:
 ```
 {
 	"data": [
@@ -125,6 +125,72 @@ Response:
 	],
 	"code": 200,
 	"message": "Recommendation deleted successfully"
+}
+```
+### ```GET::http://localhost:8000/recommendation/{id}/kl1```
+Ex. Response:
+```
+{
+	"data": [
+		[
+			{
+				"id": "627175fb0dd98dbb3a5050c3",
+				"name": "Carlos",
+				"knows": [
+					"627168b10dd98dbb3a5050c0"
+				]
+			},
+			{
+				"id": "6271798e0dd98dbb3a5050c4",
+				"name": "João",
+				"knows": [
+					"627168b10dd98dbb3a5050c0"
+				]
+			},
+			{
+				"id": "627179930dd98dbb3a5050c5",
+				"name": "Maria",
+				"knows": [
+					"627168b10dd98dbb3a5050c0"
+				]
+			},
+			{
+				"id": "6271799d0dd98dbb3a5050c6",
+				"name": "Vinícius",
+				"knows": [
+					"627168b10dd98dbb3a5050c0"
+				]
+			}
+		]
+	],
+	"code": 200,
+	"message": "Knows data retrieved successfully"
+}
+```
+### ```GET::http://localhost:8000/recommendation/{id}/kl2```
+Ex. Response:
+```
+{
+	"data": [
+		[
+			{
+				"id": "6271897dcfeb88d5996a489f",
+				"name": "Napoleão",
+				"knows": [
+					"627175fb0dd98dbb3a5050c3"
+				]
+			},
+			{
+				"id": "627182a6cfeb88d5996a489e",
+				"name": "Sebastião",
+				"knows": [
+					"6271799d0dd98dbb3a5050c6"
+				]
+			}
+		]
+	],
+	"code": 200,
+	"message": "Knows data retrieved successfully"
 }
 ```
 
