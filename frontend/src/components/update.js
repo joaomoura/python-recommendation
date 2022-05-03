@@ -39,7 +39,7 @@ export default function Update() {
         </Form.Field>
         <Form.Field>
           <label>Knows</label>
-          <input
+          <textarea
             placeholder="Knows"
             value={knows.toString().split(',')}
             onChange={(e) => {

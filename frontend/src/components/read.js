@@ -54,12 +54,16 @@ export default function Read() {
             return (
               <Table.Row>
                 <Table.Cell>{data.name}</Table.Cell>
-                <Table.Cell>{data.knows.join(", ")}</Table.Cell>
-                <Link to="/update">
-                  <Table.Cell>
+                <Table.Cell>
+                  {data.knows.map((know) => {
+                    return <p>{know}</p>;
+                  })}
+                </Table.Cell>
+                <Table.Cell>
+                  <Link to="/update">
                     <Button onClick={() => setData(data)}>Update</Button>
-                  </Table.Cell>
-                </Link>
+                  </Link>
+                </Table.Cell>
                 <Table.Cell>
                   <Button onClick={() => onDelete(data.id)}>Delete</Button>
                 </Table.Cell>

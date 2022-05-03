@@ -34,7 +34,7 @@ export default function Create() {
         </Form.Field>
         <Form.Field>
           <label>Knows</label>
-          <input
+          <textarea
             placeholder="Knows"
             onChange={(e) => {
               setKnows(e.target.value.split(","));
