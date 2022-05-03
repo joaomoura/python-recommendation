@@ -7,6 +7,8 @@ Projeto desenvolvido com o FastAPI do Python
 
 Rodando em ```http://localhost:8000```
 
+![image](https://user-images.githubusercontent.com/8227278/166521260-babf1587-eb7c-4816-9cc2-30cc3549c35a.png)
+
 Postam para os testes da API
 
 
