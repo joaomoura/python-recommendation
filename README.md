@@ -25,3 +25,109 @@ O back funciona no ```http://localhost:8000/recommendation```
 
 O front funciona no ```http://localhost:3000```
 
+## API Doc
+
+``` http://localhost:8000/docs ```
+
+## APIs requisições
+
+### ```GET::http://localhost:8000/recommendation```
+Response:
+```
+{
+	"data": [
+		[
+			{
+				"id": "627168b10dd98dbb3a5050c0",
+				"name": "Ana",
+				"knows": [
+					"627175fb0dd98dbb3a5050c3"
+				]
+			},
+			{
+				"id": "627175fb0dd98dbb3a5050c3",
+				"name": "Carlos",
+				"knows": [
+					"627168b10dd98dbb3a5050c0"
+				]
+			}
+		]
+	],
+	"code": 200,
+	"message": "Recommendations data retrieved successfully"
+}
+```
+### ```GET::http://localhost:8000/recommendation/{id}```
+Response: 
+```
+{
+	"data": [
+		{
+			"id": "627175fb0dd98dbb3a5050c3",
+			"name": "Carlos",
+			"knows": [
+				"627168b10dd98dbb3a5050c0"
+			]
+		}
+	],
+	"code": 200,
+	"message": "Recommendation data retrieved successfully"
+}
+```
+### ```POST::http://localhost:8000/recommendation```
+Request:
+```
+{
+  "name": "Carlos",
+  "knows": ["627168b10dd98dbb3a5050c0"] //Id do friend
+}
+```
+Response:
+```
+{
+	"data": [
+		{
+			"id": "627175fb0dd98dbb3a5050c3",
+			"name": "Carlos",
+			"knows": [
+				"627168b10dd98dbb3a5050c0"
+			]
+		}
+	],
+	"code": 200,
+	"message": "Recommendation added successfully."
+}
+```
+### ```PUT::http://localhost:8000/recommendation/{id}```
+Request:
+```
+{
+  "knows": [
+    "627175c60dd98dbb3a5050c2"
+  ]
+}
+```
+Response:
+```
+{
+	"data": [
+		"Recommendation with ID: 627168b10dd98dbb3a5050c0 update is successful"
+	],
+	"code": 200,
+	"message": "Recommendation updated successfully"
+}
+```
+### ```DELETE::http://localhost:8000/recommendation/{id}```
+Response:
+```
+{
+	"data": [
+		"Recommendation with ID: 627175c60dd98dbb3a5050c2 removed"
+	],
+	"code": 200,
+	"message": "Recommendation deleted successfully"
+}
+```
+
+
+
