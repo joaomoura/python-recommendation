@@ -11,7 +11,9 @@ function App() {
     <Router>
       <div className="main">
         <h2 className="main-header">Recommendation Operations</h2>
-        <Link to="/read">Lista</Link>
+        <Link to="/read">
+          <Button icon="list" />
+        </Link>
         <div>
           <Route exact path="/create" component={Create} />
         </div>
