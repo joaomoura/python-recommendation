@@ -12,7 +12,7 @@ function App() {
       <div className="main">
         <h2 className="main-header">Recommendation Operations</h2>
         <Link to="/read">
-          <Button icon="list" />
+          <Button content='List' icon={{ color: '#212121', name: 'list' }} />
         </Link>
         <div>
           <Route exact path="/create" component={Create} />
