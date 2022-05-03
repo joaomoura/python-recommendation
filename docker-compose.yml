@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  web:
+    build: ./backend
+    command: uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 8000
+    volumes:
+      - ./backend/src:/usr/src/app/
+    environment: 
+      - MONGODB_CONNSTRING=mongodb://AzureDiamond:hunter2@mongodb
+    ports:
+      - 8000:8000
+
+  app:
+    container_name: app-dev
+    image: app-dev
+    build:
+      context: ./frontend
+      target: development
+    volumes:
+      - ./frontend/src:/app/src
+    ports:
+      - 3000:3000
+
+  mongodb:
+    image: mongo:5.0
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=AzureDiamond
+      - MONGO_INITDB_ROOT_PASSWORD=hunter2
