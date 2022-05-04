@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Table, Button } from "semantic-ui-react";
+import { Table, Button, List } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 export default function Read() {
@@ -55,9 +55,11 @@ export default function Read() {
               <Table.Row>
                 <Table.Cell>{data.name}</Table.Cell>
                 <Table.Cell>
-                  {data.knows.map((know) => {
-                    return <p>{know}</p>;
-                  })}
+                  <List>
+                    {data.knows.map((know) => {
+                      return <List.Item>{know}</List.Item>;
+                    })}
+                  </List>
                 </Table.Cell>
                 <Table.Cell>
                   <Link to="/update">
