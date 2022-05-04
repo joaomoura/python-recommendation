@@ -42,7 +42,7 @@ export default function Read() {
       <Table singleLine>
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell>Name</Table.HeaderCell>
+            <Table.HeaderCell>ID-Name</Table.HeaderCell>
             <Table.HeaderCell>Knows</Table.HeaderCell>
             <Table.HeaderCell>Update</Table.HeaderCell>
             <Table.HeaderCell>Delete</Table.HeaderCell>
@@ -53,7 +53,10 @@ export default function Read() {
           {APIData.map((data) => {
             return (
               <Table.Row>
-                <Table.Cell>{data.name}</Table.Cell>
+                <Table.Cell>
+                  <p style={{ textAlign: 'center' }}>{data.id}</p>
+                  <p style={{ textAlign: 'center' }}>{data.name}</p>
+                </Table.Cell>
                 <Table.Cell>
                   <List>
                     {data.knows.map((know) => {
