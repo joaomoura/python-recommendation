@@ -28,6 +28,10 @@ O front funciona no ```http://localhost:3000```
 
 ![image](https://user-images.githubusercontent.com/8227278/166521260-babf1587-eb7c-4816-9cc2-30cc3549c35a.png)
 
+## Testes
+
+Basta rodar o comando na raiz do projeto: ```docker-compose exec web pytest .```
+
 ## APIs requisições
 
 ### ```GET::http://localhost:8000/recommendation```
